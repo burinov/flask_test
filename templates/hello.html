@@ -4,6 +4,7 @@
 <h1>Welcome - {{current_user.name}}</h1>
 <br>
 <p>Click <a href="/logout">here</a> to logout.</p>
+<p>Click <a href="/login">here</a> to login.</p>
 <br>
 
 <!-- post form -->
@@ -34,12 +35,25 @@
   <button class="btn btn-sm btn-success" type="submit">Post</button>
 </form>
 
-<!-- All posts -->
 <h3>Posts:</h3>
 {% for post in posts %}
-  <strong>Title:</strong> {{ post.title }} <br>
-  <strong>Post:</strong> {{ post.description }} <br>
-  <strong>Author:</strong> {{ post.author.name }} <br>
+
+<table id="example" class="display nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Post</th>
+                <th>Author</th>                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ post.title }}</td>
+                <td>{{ post.description }}</td>
+                <td>{{ post.author.name }}</td>                
+            </tr>            
+        </tbody>
+    </table>
 <br>
 {% endfor %}
 

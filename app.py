@@ -18,9 +18,6 @@ from form import LoginForm, RegisterForm, MessageForm
 from models import Result, User, BlogPost
 
 
-
-
-
 @app.route('/', methods=['GET', 'POST'])
 # @login_required
 def home():
